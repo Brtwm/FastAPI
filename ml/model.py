@@ -4,7 +4,7 @@ import yaml
 from transformers import pipeline
 
 # Загрузка файла конфига
-config_path = Path(__file__).parent / "config.yml"
+config_path = Path(__file__).parent / "config.yaml"
 with open(config_path, 'r') as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
 
