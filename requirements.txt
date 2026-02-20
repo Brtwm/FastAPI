@@ -1,0 +1,6 @@
+#ml
+torch
+transformers
+# Web
+fastapi
+uvicorn

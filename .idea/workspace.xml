@@ -5,26 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a05b2b-2aac-45bf-93a7-e0c05c879771" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/FastAPI_test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ml/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_ml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_ml.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +47,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
