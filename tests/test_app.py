@@ -10,6 +10,6 @@ import requests
     ]
 )
 def test_sentiment(input_text: str, expected_label: str):
-    response = requests.get("http://0.0.0.0/predict/", params={"text": input_text})
+    response = requests.get("http://127.0.0.1/predict/", params={"text": input_text})
     assert response.json()['text'] == input_text
     assert response.json()['sentiment_label'] == expected_label
