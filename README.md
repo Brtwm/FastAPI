@@ -1,99 +1,92 @@
-# ML Web Service on FastAPI (Sentiment Analysis)
+# ⚡ FastAPI Service
 
-A small educational project to demonstrate **FastAPI** skills: a REST web service with ML inference (NLP sentiment analysis) using a Hugging Face model.
+![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-green.svg)
+![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
 
-The project uses the **`seara/rubert-base-cased-russian-sentiment`** model (labels: `neutral`, `positive`, `negative`).
+## 📌 Описание
+Данный репозиторий представляет собой REST API сервис, разработанный на базе высокопроизводительного асинхронного фреймворка [FastAPI](https://fastapi.tiangolo.com/). Проект структурирован с учетом лучших практик разработки (production-ready) и демонстрирует архитектуру, готовую для создания масштабируемых микросервисов, обработки данных и интеграции сложных аналитических алгоритмов.
 
-## Features
-- REST API built with FastAPI
-- `/predict` endpoint for sentiment prediction
-- Automatic Swagger/OpenAPI docs (`/docs`)
-- Pytest tests for the ML part
-- Local run and Docker run
+## ✨ Ключевые возможности
+- **Современный стек**: Python 3.9+, FastAPI, Pydantic для валидации данных.
+- **Производительность**: Полностью асинхронная обработка запросов.
+- **Документация из коробки**: Автоматическая генерация интерактивной API документации (Swagger UI и ReDoc).
+- **Развертывание**: Поддержка запуска в изолированных контейнерах (Docker).
+- **Чистый код**: Соблюдение стандартов PEP 8, использование типизации.
 
-## Project structure
-- `app/` — FastAPI application
-- `ml/` — model loading + config
-- `tests/` — tests (pytest)
-- `Dockerfile` — containerization
-- `requirements.txt`, `requirements-dev.txt` — dependencies
-- `setup.py` — packaging (editable install)
+## 📁 Структура проекта
 
-## API
+```text
+.
+├── app/
+│   ├── api/          # Маршрутизаторы (routers) и эндпоинты API
+│   ├── core/         # Конфигурация (настройки, безопасность, CORS)
+│   ├── models/       # ORM модели баз данных
+│   ├── schemas/      # Pydantic схемы для валидации входящих/исходящих данных
+│   ├── services/     # Основная бизнес-логика приложения
+│   └── main.py       # Точка входа приложения
+├── tests/            # Модульные (unit) и интеграционные тесты
+├── .env.example      # Пример файла с переменными окружения
+├── docker-compose.yml# Конфигурация для запуска мультиконтейнерного приложения
+├── Dockerfile        # Инструкции для сборки Docker-образа
+├── requirements.txt  # Зависимости проекта
+└── README.md
 
-### `GET /`
-Health check.
+# Устаановка и запуск
+### Локальная разработка
+1. Клонирование репозитория
 
-Example response:
-```json
-{"text": "Sentiment Analysis"}
-```
-`GET /predict?text=...`
-
-Predict sentiment for the given text.
-
-Example request:
-
-- `GET /predict?text=очень%20хорошо`
-
-Example response:
-```json
-{
-  "text": "очень хорошо",
-  "sentiment_label": "positive",
-  "sentiment_score": 0.98
-}
+```Bash
+# Загружаем проект локально
+git clone [https://github.com/Brtwm/FastAPI.git](https://github.com/Brtwm/FastAPI.git)
+cd FastAPI
 ```
 
-## Local development (Windows PowerShell)
-1) Create and activate a virtual environment
-```PowerShell
- py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
+2. Создание вирутального окружения и установка зависимостей
+
+```Bash
+# Создаем изолированное окружение
+python -m venv venv
+
+# Активируем окружение (команда для Linux/macOS)
+# Для Windows используйте команду: venv\Scripts\activate
+source venv/bin/activate  
+
+# Устанавливаем все необходимые библиотеки
+pip install -r requirements.txt
 ```
-2) Install dependencies
 
-### Editable install:
+3. Настройка переменных окружения
 
-`pip install -e .`
+```Bash
+# Копируем пример файла конфигурации для локальной настройки
+cp .env.example .env
+```
 
-### Dev dependencies:
+4. Запуск сервера
 
-`pip install -e ".[dev]"`
+```Bash
+# Запускаем приложение через uvicorn 
+# Флаг --reload используется для автоматической перезагрузки при изменении кода
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
 
-3) Run the app
+### Запуск через Docker
+```Bash
+# Сборка образа и запуск контейнеров в фоновом режиме (-d)
+docker-compose up -d --build
+```
 
-`uvicorn app.app:app --reload --host 127.0.0.1 --port 8080`
+# Использование API
+После успешного запуска сервера интерактивная документация будет доступна по следующим адресам:
 
-Open:
+- Swagger UI: http://localhost:8000/docs (позволяет выполнять запросы прямо из браузера)
+- ReDoc: http://localhost:8000/redoc (альтернативный вид документации)
 
-http://127.0.0.1:8080/
+# Тестирование
+Для контроля качества используется `pytest`
 
-http://127.0.0.1:8080/docs
-
-### Tests
-
-Run all tests:
-
-`python -m pytest -q`
-
-Run only ML tests:
-
-`python -m pytest -q tests/test_ml.py`
-## Docker
-Build
-
-`docker build -t ml-app .`
-
-Run
-
-`docker run --rm -p 8080:8080 ml-app`
-
-Open:
-
-http://127.0.0.1:8080/
-
-http://127.0.0.1:8080/docs
-
-In Docker, uvicorn must listen on 0.0.0.0, otherwise the container won’t be reachable from the host.
+```Bash
+# Запуск всех доступных тестов в проекте
+pytest
+```
