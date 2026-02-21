@@ -61,6 +61,7 @@ python -m pip install --upgrade pip
 ### Dev dependencies:
 
 `pip install -e ".[dev]"`
+
 3) Run the app
 `uvicorn app.app:app --reload --host 127.0.0.1 --port 8080`
 
